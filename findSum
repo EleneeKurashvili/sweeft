@@ -1,0 +1,16 @@
+
+class problemFour {
+    public static void main(String[] args) {
+        problemFour c = new problemFour();
+        String a = "1010";
+        String b = "1011";
+        String sum = c.findSum(a,b);
+        System.out.println(sum);
+    }
+    private String findSum(String a, String b){
+        int first = Integer.parseInt(a,2);//parse binary to integer
+        int second = Integer.parseInt(b,2);
+        int sum = first + second;
+        return Integer.toBinaryString(sum);//convert sum to binary string
+    }
+}
