@@ -1,0 +1,23 @@
+class problemTwo {
+    public static void main(String[] args) {
+        problemTwo c = new problemTwo();
+        int amount = 123;
+        int result = c.minSplit(amount);
+        System.out.println("min split is " + result);
+    }
+    private int minSplit(int target){
+        int cnt = 0;
+        int indx = 0;
+        int[] coins = {50,20,10,5,1};
+        // Continue until the target is reduced to zero or all denominations are considered
+        while(target > 0 && indx < coins.length){
+            if(target >= coins[indx]){// Check if this coin is enough for target
+                int temp = target / coins[indx];// Calculate the number of coins
+                cnt += temp;// Add the number of coins to the count
+                target -= temp * coins[indx];// Reduce the remaining target amount
+            }
+            indx++;// Move to the next coin denomination
+        }
+        return cnt;
+    }
+}
