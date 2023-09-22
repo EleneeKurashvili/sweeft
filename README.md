@@ -1,0 +1,22 @@
+# sweeft
+java II step task
+import java.util.HashSet;
+class problemOne{
+    public static void main(String[] args) {
+        int[] nums = {1,2,2,1,3};
+        problemOne c = new problemOne();
+        int result = c.singleNumber(nums);
+        System.out.println("Single element is " + result);
+    }
+    private int singleNumber(int[] nums){
+        HashSet<Integer> set = new HashSet<>();
+        for(int n : nums){
+            if(set.contains(n)){
+                set.remove(n);
+            }else{
+                set.add(n);
+            }
+        }
+        return set.iterator().next();
+    }
+}
