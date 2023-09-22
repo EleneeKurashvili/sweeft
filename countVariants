@@ -1,0 +1,12 @@
+class problemFive {
+    public static void main(String[] args) {
+        problemFive c = new problemFive();
+        int stairsCount = 6;
+        int res = c.countVariants(stairsCount);
+        System.out.println("amount is " + res);
+    }
+    private int countVariants(int n){//use Fibonacci sequence
+        if(n <= 1) return 1; //base case
+        return countVariants(n-1) + countVariants(n-2); // rec call
+    }
+}
