@@ -1,0 +1,24 @@
+class problemThree {
+    public static void main(String[] args) {
+        problemThree c = new problemThree();
+        int[] array = {1,2,3,4,5,6,8,7,34,3,452};
+        int result = c.notContains(array);
+        System.out.println(result);
+    }
+    private int notContains(int[] arr){
+        int min = 1;
+        while(true){
+            if(!contains(arr,min)){
+                break;
+            }
+            min++;
+        }
+        return min;
+    }
+    private boolean contains(int[] arr, int num){
+        for(int n : arr){
+            if(n == num) return true;
+        }
+        return false;
+    }
+}
